@@ -76,7 +76,7 @@ function App() {
   };
   return (
     <>
-      <h1 className="title">goit-react-hw-04</h1>
+      <h1 className="title">goit-typescript-hw-02</h1>
       <SearchBar handleSetQuery={handleSetQuery} />
       <ImageGallery articles={articles} openModal={openModal} />
       {isLoading && <h2>Loading...</h2>}
