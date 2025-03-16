@@ -1,0 +1,22 @@
+.wraper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  transition: transform 250ms ease-in-out;
+}
+
+.text {
+  background-color: aquamarine;
+}
+
+.wraper:hover,
+.wraper:focus {
+  transform: scale(1.05);
+}
+.imgE {
+  width: 463.98px;
+  height: 300px;
+  object-fit: cover;
+}
