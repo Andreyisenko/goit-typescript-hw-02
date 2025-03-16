@@ -1,6 +1,19 @@
 import ReactModal from 'react-modal';
 ReactModal.setAppElement('#root');
-const ImageModal = ({ modalIsOpen, closeModal, src, alt }) => {
+
+interface ImageModalProps {
+  modalIsOpen: boolean;
+  closeModal: () => void;
+  src: string;
+  alt: string;
+}
+
+const ImageModal: React.FC<ImageModalProps> = ({
+  modalIsOpen,
+  closeModal,
+  src,
+  alt,
+}) => {
   return (
     <ReactModal
       style={{
@@ -9,7 +22,7 @@ const ImageModal = ({ modalIsOpen, closeModal, src, alt }) => {
           top: 0,
           left: 0,
           right: 0,
-          botom: 0,
+          bottom: 0,
           backgroundColor: 'rgba(41, 38, 38, 0.75)',
         },
         content: {

@@ -1,5 +1,12 @@
+import { Articl } from '../../types';
 import css from './ImageCard.module.css';
-const ImageCard = ({ article, openModal }) => {
+
+interface ImageCardProps {
+  article: Articl
+  openModal: (src: string, alt: string) => void
+}
+
+const ImageCard: React.FC <ImageCardProps> = ({ article, openModal }) => {
   return (
     <div className={css.wraper}>
       <img
