@@ -18,7 +18,7 @@ function App() {
   const [page, setPage] = useState<number>(1);
   const [totalPage, setTotalPages] = useState<number>(0);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
-  const [modalSrc, setModalSrc] = useState<string | null>('');
+  const [modalSrc, setModalSrc] = useState<string | undefined>('');
   const [modalAlt, setModalAlt] = useState<string>('');
   // console.log(query);
 
@@ -68,14 +68,14 @@ function App() {
   const changeloadMore = (): void => {
     setPage(prev => prev + 1);
   };
-  const openModal = (src: string, alt: string): void => {
+  const openModal = (src: string | undefined, alt: string): void => {
     setModalIsOpen(true);
     setModalSrc(src);
     setModalAlt(alt);
   };
   const closeModal = (): void => {
     setModalIsOpen(false);
-    setModalSrc(null);
+    setModalSrc(undefined);
     setModalAlt('');
   };
   return (

@@ -3,9 +3,9 @@ ReactModal.setAppElement('#root');
 
 interface ImageModalProps {
   modalIsOpen: boolean;
-  closeModal: () => void;
-  src: string;
+  src: string |undefined;
   alt: string;
+  closeModal: () => void;
 }
 
 const ImageModal: React.FC<ImageModalProps> = ({
