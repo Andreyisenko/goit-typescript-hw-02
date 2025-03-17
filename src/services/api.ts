@@ -1,5 +1,4 @@
 import axios from 'axios';
-import type { AxiosResponse } from 'axios';
 
 const YOUR_ACCESS_KEY = 'Hg1CpLsou6vsLxEalGGcMeVDU3n-0eTBhr2sOtrVw94';
 
@@ -19,17 +18,12 @@ interface Art {
 interface Resp {
   total: number;
   total_pages: number;
-  results: Art[];
+  results: Art[]
 }
 
 export const fetchArticles = async (query: string, page: number):  Promise <Resp> => {
-  // const params = new URLSearchParams({
-  //   client_id: YOUR_ACCESS_KEY,
-  //   query,
-  //   page,   
-  //   per_page: 20,
-  // });
-  const response: AxiosResponse<Resp> = await axios.get (
+
+  const response = await axios.get <Resp>(
     `https://api.unsplash.com/search/photos?client_id=${YOUR_ACCESS_KEY}&query=${query}&page=${page}&per_page=20`
   );
   return response.data;
