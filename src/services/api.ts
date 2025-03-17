@@ -23,14 +23,14 @@ interface Resp {
 }
 
 export const fetchArticles = async (query: string, page: number):  Promise <Resp> => {
-  const params = new URLSearchParams({
-    client_id: YOUR_ACCESS_KEY,
-    query,
-    page,   
-    per_page: 20,
-  });
+  // const params = new URLSearchParams({
+  //   client_id: YOUR_ACCESS_KEY,
+  //   query,
+  //   page,   
+  //   per_page: 20,
+  // });
   const response: AxiosResponse<Resp> = await axios.get (
-    `https://api.unsplash.com/search/photos?${params} `
+    `https://api.unsplash.com/search/photos?client_id=${YOUR_ACCESS_KEY}&query=${query}&page=${page}&per_page=20`
   );
   return response.data;
 };
